@@ -1,0 +1,63 @@
+===============PROJET INF 403===============
+
+======Requirements.txt======
+pip install -r requirements.txt
+
+======Exécution======
+python3 interface.py
+
+Tout autre tutoriel d'utilisation est disponible dans le programme python ou dans le document pdf.
+
+
+===Grandes lignes de mon projet===
+
+J'ai fait le choix de réaliser le projet en 4 parties.
+
+Partie 1: Un tuto simpliste
+La première partie du projet est une partie tutoriel qui se résume à quelques brèves explications sur différents points du programme.
+
+Partie 2: Une interface bas niveau utilisable pour n'importe quelle base de données 
+Cette seconde partie est la partie accessible dans le sous menu [c] sur le menu d'accueil. 
+Elle permet de créer/utiliser des bases de données. Cette partie est donc utilisable en dehors du projet, ou dans le futur avec d'autres bases de données.
+L'interface bas niveau prend des commandes SQL entrées au clavier. Mais aussi des fichiers sql. Pour cela, il suffit de taper le nom du fichier SQL dans l'entrée
+clavier et le programme s'occupe du reste. Le fichier doit être dans le dossier principal.
+On a également 2 commandes en plus des commandes SQL: save() et exit()
+Elles permettent respectivement de sauvegarder nos changements et de sortir proprement de l'interface bas niveau (avec une demande de sauvegarde).
+
+Partie 3: Une interface haut niveau pour le projet
+Cette troisième partie constitue le principal du projet. C'est une interface qui ne demande aucune connaissance SQL. 
+Il suffit de suivre les instructions pour obtenir des informations variées sur des joueurs/clubs ou tournois.
+A partir d'une information demandée, vous obtiendrez une interface claire où vous devriez toutes les informations souhaitées.
+
+Partie 4: Une interface bas niveau pour le projet
+Cette quatrième et dernière partie du projet est une version optimisée de la partie 2. Les affichages sont plus clairs avec notamment les attributs qui sont 
+beaucoup plus lisibles. Sur cette partie, on a également l'apparition de deux commandes: ?tables et ?attributs [table].
+Elles permettent respectivement d'obtenir une liste des tables disponibles et une liste des attributs de la table passée en arguments. J'ai rajouté cela car il 
+est parfois difficile de se souvenir parfaitement de toutes les tables et attributs. Cela est donc utile. 
+
+
+
+
+
+
+====Organisation du dossier====
+
+Dans le sous dossier Documentation, on trouve tous les documents relatifs à la théorie du projet (les descriptions, UML et tables sur papier).
+Dans le dossier principal, on trouve:
+    -interface.py : le fichier principal à éxécuter
+    -interface_haut_niveau.py: le fichier gérant l'intégralité de l'interface haut niveau qui ne requiert aucune connaissance sql
+    -projetfinal.db : la DB utilisée par le projet
+    -requirements.txt : pour installer les librairies nécessaires au fonctionnement du projet
+    -tableau.py :  nécessaire pour le fichier interface.py (gère les affichages de l'interface bas niveau)
+    -global.sql : fichier fournissant toutes les entrées pour la base de données
+    -erreurs.sql : fichier fournissant des entrées erronées à tester
+    -les eventuels fichiers sql à éxécuter dans l'interface bas niveau
+
+=====Quelques informations en vrac sur le programme=====
+
+-Le programme n'est pas uniquement dédié au projet (il peut utiliser d'autres bases de données si souhaité) mais l'onglet projet est disponible dès la première entrée utilisateur
+-Le programme accepte les requetes en majuscules ou minuscules
+-A chaque commande, vous obtenez son temps d'éxécution, et le nombre de lignes résultantes
+-A la fermeture du programme via la procédure prévue (exit()=>q), vous obtenez le temps passé sur le programme ainsi que le nombre de requetes que vous aurez effectué
+-Le nombre de requetes éxécutées en arrière plan dans l'interface haut niveau est également ajouté sur le nombre affiché à la sortie
+-Toutes les informations de la base de données sont réelles (les joueurs/clubs/tournois/matchs) exceptés les numéros de matchs (difficiles à retrouver)
